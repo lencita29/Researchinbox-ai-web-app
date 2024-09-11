@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Login from './components/Login'; // Your login component
+import Onebox from './components/Onebox'; // The Onebox component or other components
 
-function App() {
+const App = () => {
+  const navigate = useNavigate();
+
+  const extractToken = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    if (token) {
+      localStorage.setItem('authToken', token); // Store the token
+      navigate('/onebox'); // Redirect after storing token
+    }
+  };
+
+  useEffect(() => {
+    extractToken();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/onebox" element={<Onebox />} />
+      {/* Add other routes as needed */}
+    </Routes>
   );
-}
+};
 
 export default App;
