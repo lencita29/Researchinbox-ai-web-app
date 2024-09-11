@@ -1,0 +1,396 @@
+/* Container for the entire Onebox page */
+.onebox-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1e1e1e; /* Dark gray background for better contrast */
+    color: white;
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    background-color: #1e1e1e; /* Dark gray background for better contrast */
+    color: white;
+}
+
+/* Light Theme Styles */
+.light-theme {
+    background-color: #ffffff; /* Light background color */
+    color: #333; /* Dark text color for light theme */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 56px;
+    background-color: #101113;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 760px;
+    border-right: 1px solid #343A40;
+    z-index: 1001;
+}
+
+/* Sidebar Logo */
+.sidebar .logo {
+    width: 50px; /* Adjusted width */
+    height: 50px; /* Adjusted height */
+    padding: 8px 12px 12px 2px; /* Padding */
+    gap: 0px; /* No gap needed */
+    border-radius: 2px 0px 0px 0px; /* Rounded corners */
+    opacity: 1; /* Fully opaque */
+}
+
+/* Ensure the image inside the logo class is also styled properly */
+.sidebar .logo img {
+    width: 100%; /* Image takes full width of the parent */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any inline spacing */
+}
+/* Sidebar Menu */
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .menu-item {
+    margin: 20px 0;
+    font-size: 20px;
+    color: #bbb;
+    text-align: center;
+}
+
+.sidebar .menu-item:hover {
+    color: #1a73e8;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-footer .profile {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main Content Area */
+/* Main Content Area */
+.main-content {
+    width: 1183px; /* Fixed width */
+    height: 573px; /* Fixed height */
+    margin-left: 57px; /* Make room for the sidebar */
+    position: absolute; /* Absolute positioning */
+    top: 67px; /* Start 67px from the top */
+    left: 57px; /* Start 57px from the left */
+    background: #000000;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: margin-left 0.3s;
+    gap: 0px; /* No gap between elements */
+    /* Removed opacity: 0; */
+}
+
+/* Header Styling */
+.header {
+    width: 1163px; /* Fixed width */
+    height: 44px; /* Fixed height */
+    padding: 24px 0 0 0; /* Padding for content */
+    background: #1F1F1F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: #343A40;
+    box-shadow: 0px -186px 120px 0px #2527381A inset;
+    position: fixed;
+    top: 3px; /* Start 3px from the top */
+    left: 57px; /* Ensures it doesn't overlap with the sidebar */
+    z-index: 1000;
+    gap: 24px; /* Gap between header elements */
+    color: white; /* Set text color to white */
+}
+
+/* Smaller text size for "Onebox" */
+.header h1 {
+    font-size: 18px; /* Smaller text size */
+    font-weight: bold;
+    margin-left: 8px; /* Add some margin to avoid overlap */
+    color: white; /* Ensure header text is white */
+}
+
+/* Header Right Side */
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Ensure some spacing from the right edge */
+    color: white; /* Ensure text in header-right is white */
+}
+
+/* Theme Toggle Button */
+.toggle-theme {
+    background: none;
+    border: none;
+    color: white; /* Make sure the icon color is white */
+    font-size: 16px; /* Adjust icon size */
+    cursor: pointer;
+    margin-right: 10px; /* Some spacing between icon and text */
+}
+
+/* Workspace Text */
+.workspace-text {
+    font-size: 14px;
+    font-weight: normal;
+    color: white; /* Ensure workspace text is white */
+    margin-left: auto; /* Push text to the right */
+}
+
+/* Central Content Styling */
+.content-center {
+    text-align: center;
+    margin-top: 100px; /* Ensures content isn't hidden behind the header */
+}
+
+.email-illustration {
+    width: 200px;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+p {
+    font-size: 16px;
+    color: #888;
+}
+/* Reply Button */
+.reply-button {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 500px;
+    left: 10px;
+    background-color: #1a73e8; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.reply-button:hover {
+    background-color: #0f59c7;
+}
+
+/* Right Column (3rd column) */
+.right-column {
+    width: 300px; /* Adjusted width for better layout */
+    height: 500px; /* Fixed height */
+    position: absolute;
+    top: 5px;
+    right: 10px; /* Positioned on the right */
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-left: 1px solid #353533;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: white;
+    overflow-y: auto;
+}
+
+/* Section within the right column */
+.right-column .section {
+    padding: 20px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty section placeholder */
+.right-column .section-empty {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    border: 1px dashed #353533;
+}
+
+/* Activities Section */
+.right-column .activities-section {
+    padding: 20px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-column .activities-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.right-column .activities-section p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Leftmost Column (1st column) */
+.left-column {
+    width: 250px;
+    height: 500px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: white;
+    background-color:#000000;
+    border: 1px solid #353533;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.left-column .inbox-item {
+    padding: 20px;
+    border-bottom: 1px solid #353533;
+    color: white;
+    cursor: pointer;
+}
+
+.left-column .inbox-item:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+/* Vector Line Between First and Middle Column */
+.vector-line {
+    width: 2px;
+    height: 500px;
+    position: absolute;
+    top: 67px;
+    left: 361px;
+    background-color: #33383F;
+    opacity: 1;
+}
+/* Middle Column Header */
+.middle-column {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    top: 5px;
+    left: 220px;
+    padding: 16px;
+    background-color: #1e1e1e;
+    border-left: 1px solid #353533;
+    border-right: 1px solid #353533;
+    display: flex;
+}  
+.middle-header {
+    width: 799px;
+    height: 0px;
+    position: absolute;
+    top: 30px;
+    left: 05px;
+    padding: 0px 17px;
+    display: flex;
+    align-items: center;
+    background-color: #101113;
+    border-bottom: 1px solid #353533;
+    border-radius: 7px 7px 0px 0px;
+    color: white;
+    gap: 8px;
+}
+
+.middle-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+/* Email Section */
+.email-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Email Header */
+.email-section .email-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.email-section .email-header h3 {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.email-section .email-header .email-date {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Email Content */
+.email-section .email-body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Reply Button */
+/*.email-section .reply-button {
+    width: 80px;
+    height: 32px;
+    background-color: #1a73e8; /* Blue button */
+ /*   color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}*/
+
+.email-section .reply-button:hover {
+    background-color: #0f59c7;
+}
+/* Styling for the email illustration image */
+.email-illustration {
+    width: 100%; /* Make the image responsive to the width of its container */
+    max-width: 300px; /* Set a maximum width to prevent it from becoming too large */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 20px auto; /* Center the image horizontally and add some vertical margin */
+    display: block; /* Make the image a block element to center it */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
